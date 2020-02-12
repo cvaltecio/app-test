@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../services/api.service';
+
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +9,20 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  lista = [
+    { nome: 'nike', preco: 150 },
+    { nome: 'adidas', preco: 99 },
+    { nome: 'lacoste', preco: 15 },
+    { nome: 'teste 1', preco: 1000 },
+    { nome: 'arroz', preco: 1 },
+  ]
+
+  constructor(
+    private api: ApiService
+  ) { }
+
+  async onClick() {
+
+  }
 
 }
