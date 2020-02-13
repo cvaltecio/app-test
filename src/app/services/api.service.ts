@@ -6,16 +6,16 @@ import axios from 'axios';
 })
 export class ApiService {
 
-  BASE_URL: 'https://viacep.com.br/ws'
+  BASE_URL: string = 'https://viacep.com.br/ws';
 
   constructor() { }
 
-  getCep() {
+  public async getAdrress(cep: string) {
     return new Promise((resolve, reject) => {
-      axios.get(`${this.BASE_URL}/01001000/json/`)
+      axios.get(`${this.BASE_URL}/${cep}/json/`)
         .then((resp) => resolve(resp.data))
-        .catch((err) => reject(err));
-    });
+        .catch((err) => reject({ msg: 'Erro ao obter CEP, por favor, tente novamente', err }))
+    })
   }
 
   get produtos() {
