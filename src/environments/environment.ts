@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  API: 'localhost:3000'
+  API: 'localhost:3000',
+  STATUSBAR_COLOR: '#3880ff'
 };
 
 /*
